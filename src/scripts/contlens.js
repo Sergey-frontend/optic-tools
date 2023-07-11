@@ -1,29 +1,3 @@
-const radioButtonsCompany = document.querySelectorAll('.company-select input[type="radio"]');
-radioButtonsCompany.forEach((radioButtonCompany) => {
-  radioButtonCompany.addEventListener('change', handleRadioButtonChange);
-});
-
-const radioLensTypes = document.querySelectorAll('.lens-type input[type="radio"]');
-radioLensTypes.forEach((radioLensType) => {
-  radioLensType.addEventListener('change', handleRadioButtonChange);
-});
-
-function handleRadioButtonChange(e) {
-  const radioButton = e.target.parentElement;
-  const radioGroup = radioButton.parentElement;
-  const radioButtons = radioGroup.querySelectorAll('.radio-button');
-
-  radioButtons.forEach((button) => {
-    button.classList.remove('active');
-  });
-
-  radioButton.classList.add('active');
-
-  const selectedValue = e.target.id;
-  console.log('Выбрано значение:', selectedValue);
-  setActiveInputs(selectedValue);
-}
-
 const form = document.querySelector('.form');
 const spheres = document.querySelectorAll('.col-sph');
 const cylindres = document.querySelectorAll('.col-cyl');
@@ -73,3 +47,29 @@ const setActiveInputs = (executeCalculation) => {
     }
   }
 };
+
+function handleRadioButtonChange(e) {
+  const radioButton = e.target.parentElement;
+  const radioGroup = radioButton.parentElement;
+  const radioButtons = radioGroup.querySelectorAll('.radio-button');
+
+  radioButtons.forEach((button) => {
+    button.classList.remove('active');
+  });
+
+  radioButton.classList.add('active');
+
+  const selectedValue = e.target.id;
+  // console.log('Выбрано значение:', selectedValue);
+  setActiveInputs(selectedValue);
+}
+
+const radioButtonsCompany = document.querySelectorAll('.company-select input[type="radio"]');
+radioButtonsCompany.forEach((radioButtonCompany) => {
+  radioButtonCompany.addEventListener('change', handleRadioButtonChange);
+});
+
+const radioLensTypes = document.querySelectorAll('.lens-type input[type="radio"]');
+radioLensTypes.forEach((radioLensType) => {
+  radioLensType.addEventListener('change', handleRadioButtonChange);
+});
