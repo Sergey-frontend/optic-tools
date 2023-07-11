@@ -1,6 +1,6 @@
 // read only
 
-module.exports = {
+export default {
   sphere: {
     '+5.50': {
       cylinder: {
