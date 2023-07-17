@@ -1,79 +1,79 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta charset="UTF-8" >
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" >
     <title>Contact Lens Transposition</title>
-    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/styles.css" >
   </head>
   <body>
     <div class="floating-button">
-      <img src="../images/go-back.png" alt="go-back">
-    </div>    
+      <img class="btn-back-black" src="../images/back-black.svg" alt="go-back" >
+      <img class="btn-back-light" src="../images/back-white.svg" alt="go-back">
+    </div>
     <div class="container">
-
-      <div class="area mb5">
-        
-        <div class="radio-group company-select">
-          <p class="mx5">Выберите производителя</p>
-          <label for="acuvue" class="radio-button acuvue px5 mr10">
-            <input type="radio" name="radio1" id="acuvue" />
-            <img src="../images/acuvue-logo.png" alt="Acuvue" />
-          </label>
-          <label for="alcon" class="radio-button alcon px5">
-            <input type="radio" name="radio1" id="alcon" title="Временно недоступно" />
-            <img src="../images/alcon-logo.png" alt="Alcon" />
-          </label>
-        </div>
-
-        <div class="radio-group lens-type">
-          <p class="mx5">Выберите тип расчета</p>
-
-          <label for="monofocal" class="radio-button px5">
-            <input type="radio" name="radio2" id="monofocal" />
-            <span class="us-none">Монофокальные</span>
-          </label>
-          <label for="toric" class="radio-button px5">
-            <input type="radio" name="radio2" id="toric" />
-            <span class="us-none">Торические</span>
-          </label>
-          <label for="multifocal" class="radio-button px5">
-            <input type="radio" name="radio2" id="multifocal" />
-            <span class="us-none">Мультифокальные</span>
-          </label>
-        </div>
-
-          <form class="form mx5">
-            <div class="form-row">
-              <label>
-                <span class="mr20">OD</span>
-              </label>
-              <input class="input input-wide ta-center mr10 col-sph rounded od" type="text" placeholder="Сфера" disabled>
-              <input class="input input-wide ta-center mr10 col-cyl rounded od" type="text" placeholder="Циллиндр" disabled>
-              <input class="input input-wide ta-center mr10 col-axis rounded od" type="text" placeholder="Ось" disabled>
-              <input class="input input-wide ta-center col-add rounded od" type="text" placeholder="Адд" disabled>
-            </div>
-            <div class="form-row">
-              <label>
-                <span class="mr20">OS</span>
-              </label>
-              <input class="input input-wide ta-center mr10 col-sph rounded os" type="text" placeholder="Сфера" disabled>
-              <input class="input input-wide ta-center mr10 col-cyl rounded os" type="text" placeholder="Циллиндр" disabled>
-              <input class="input input-wide ta-center mr10 col-axis rounded os" type="text" placeholder="Ось" disabled>
-              <input class="input input-wide ta-center col-add rounded os" type="text" placeholder="Адд" disabled>
-            </div>
-            <button type="submit" class="btn btn-box">
-              <span>Расчет</span>
-            </button>
-          </form>
-          
+      <div>
+        <h2 class="header">Транспозиция МКЛ ACUVUE</h2>
       </div>
-      <div class="area">
-        <p>тут будет результат</p>
-        <p>тут будет результат</p>
+      <div class="box-content">
+        <div class="radio-group company">
+          <p class="group-description">Выберите производителя</p>
+          <label for="acuvue" class="radio-button">
+            <input type="radio" name="radio1" id="acuvue" >
+            <img class="btn-img" src="../images/acuvue-logo.png" alt="Acuvue" >
+          </label>
+          <label for="alcon" class="radio-button">
+            <input type="radio" name="radio1" id="alcon" title="Временно недоступно" >
+            <img class="btn-img" src="../images/alcon-logo.png" alt="Alcon" >
+          </label>
+        </div>
+        <div class="radio-group lens-type">
+          <p class="group-description">Выберите тип расчета</p>
+          <label for="monofocal" class="radio-button">
+            <input type="radio" name="radio2" id="monofocal" >
+            <span class="type-name">Монофокальные</span>
+          </label>
+          <label for="toric" class="radio-button">
+            <input type="radio" name="radio2" id="toric" >
+            <span class="type-name">Торические</span>
+          </label>
+          <label for="multifocal" class="radio-button">
+            <input type="radio" name="radio2" id="multifocal" >
+            <span class="type-name">Мультифокальные</span>
+          </label>
+        </div>
+        <div>
+          <p class="group-description">Внесите данные рецепта</p>
+        </div>
+        <form class="form form-transposition">
+          <div class="form-row">
+            <label>
+              <span class="eye-name">OD</span>
+            </label>
+            <input class="input input-wide" type="text" placeholder="Сфера">
+            <input class="input input-wide" type="text" placeholder="Циллиндр">
+            <input class="input input-wide" type="text" placeholder="Ось">
+            <input class="input input-wide" type="text" placeholder="Адд">
+          </div>
+          <div class="form-row">
+            <label>
+              <span class="eye-name">OS</span>
+            </label>
+            <input class="input input-wide" type="text" placeholder="Сфера">
+            <input class="input input-wide" type="text" placeholder="Циллиндр">
+            <input class="input input-wide" type="text" placeholder="Ось">
+            <input class="input input-wide" type="text" placeholder="Адд">
+          </div>
+          <div class="submit">
+            <input type="submit" value="Рассчитать" class="btn btn-submit"></input>
+          </div>
+        </form>
+      </div>
+      <div class="box-content">
+        <p class="group-description">тут будет результат</p>
+        <p class="group-description">тут будет результат</p>
       </div>
     </div>
-    <button class="to-main">Home</button>
     <script src="../scripts/redirectToHome.js"></script>
     <script src="../scripts/contlens.js"></script>
   </body>

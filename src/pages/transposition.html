@@ -3,12 +3,88 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="../styles/styles.css">
     <title>Optic Tools</title>
   </head>
   <body>
-    <h1>This is TRANSPOSITION Page</h1>
-    <button class="to-main">to home</button>
-
+    <div class="floating-button">
+      <img class="btn-back-black" src="../images/back-black.svg" alt="go-back" />
+      <img class="btn-back-light" src="../images/back-white.svg" alt="go-back">
+    </div>
+    <div class="container">
+      <div>
+        <h2 class="header">Транспозиция очковых линз</h2>
+      </div>
+      <div class="box-content">
+        <div class="radio-group lens-type">
+          <p class="group-description">Выберите тип расчета</p>
+          <label for="spheroequivalent" class="radio-button">
+            <input type="radio" name="radio" id="spheroequivalent" />
+            <span class="type-name">Сфероэквивалент</span>
+          </label>
+          <label for="transposition" class="radio-button">
+            <input type="radio" name="radio" id="transposition" />
+            <span class="type-name">Транспозиция</span>
+          </label>
+        </div>
+        <div class="form form-transposition">
+          <div>
+            <p class="group-description">Внесите данные рецепта</p>
+          </div>
+        <form >
+          <div class="form-row">
+            <label>
+              <span class="eye-name">OD</span>
+            </label>
+            <input
+              class="input input-wide"
+              type="text"
+              placeholder="Сфера"
+              />
+            <input
+              class="input input-wide"
+              type="text"
+              placeholder="Циллиндр"
+              />
+            <input
+              class="input input-wide"
+              type="text"
+              placeholder="Ось"
+              />
+          </div>
+          <div class="form-row">
+            <label>
+              <span class="eye-name">OS</span>
+            </label>
+            <input
+              class="input input-wide"
+              type="text"
+              placeholder="Сфера"
+              />
+            <input
+              class="input input-wide"
+              type="text"
+              placeholder="Циллиндр"
+              />
+            <input
+              class="input input-wide"
+              type="text"
+              placeholder="Ось"
+              /> 
+          </div>
+          <div class="submit">
+            <input type="submit" value="Рассчитать" class="btn btn-submit"></input>
+          </div>
+        </form>
+      </div>
+      </div>
+      <div class="box-content">
+        <div class="result">
+          <p class="group-description">result here</p>
+          <p class="group-description">result here</p>
+        </div>
+      </div>
+    </div>
     <script src="../scripts/redirectToHome.js"></script>
     <script src="../scripts/transposition.js"></script>
   </body>

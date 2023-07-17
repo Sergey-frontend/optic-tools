@@ -7,18 +7,20 @@
     <title>Calculation of the minimum diameter</title>
   </head>
   <body>
+    <div class="floating-button">
+      <img class="btn-back-black" src="../images/back-black.svg" alt="go-back" />
+      <img class="btn-back-light" src="../images/back-white.svg" alt="go-back">
+    </div>
     <div class="container">
       <div>
-        <h2 class="ta-center mx5">Минимальный диаметр очковой линзы</h2>
+        <h2 class="header">Расчет минимального диаметра</h2>
       </div>
-
-      <div class="min-dia-calc">
-        <form>
-          <div class="area">
+      <div class="box-content">
+        <form class="form form-min-dia">
             <div class="form-row">
               <label for="ocular"></label>
               <input
-              class=" input input-narrow mr20"
+              class="input input-narrow"
               placeholder="00"
               type="text"
               id="ocular"
@@ -27,35 +29,65 @@
               title="Пожалуйста, введите только цифры"
               required
               >
-              <span class="description">Укажите минимальный диаметр окуляра оправы в мм</span>
+              <span class="input-info">Укажите минимальный диаметр окуляра оправы в мм</span>
             </div>
-      
             <div class="form-row">
               <label for="bridge"></label>
-              <input class="input input-narrow mr20" placeholder="00" type="text" id="bridge" name="bridge" pattern="[0-9]+" title="Пожалуйста, введите только цифры" required>
-              <span class="description">Укажите ширину моста(перегородки) оправы в мм</span>
+              <input class="input input-narrow"
+              placeholder="00"
+              type="text"
+              id="bridge"
+              name="bridge"
+              pattern="[0-9]+"
+              title="Пожалуйста, введите только цифры"
+              required
+              >
+              <span class="input-info">Укажите ширину моста(перегородки) оправы в мм</span>
             </div>
-      
             <div class="form-row">
               <label for="pd"></label>
-              <input class="input input-narrow mr20" placeholder="00" type="text" id="pd" name="pd" pattern="[0-9]+" title="Пожалуйста, введите только цифры" required>
-              <span class="description">Укажите межцентровое расстояние пациента в мм</span>
+              <input class="input input-narrow"
+              placeholder="00"
+              type="text"
+              id="pd"
+              name="pd"
+              pattern="[0-9]+"
+              title="Пожалуйста, введите только цифры"
+              required
+              >
+              <span class="input-info">Укажите межцентровое расстояние пациента в мм</span>
             </div>
-      
-          </div>
-          <button type="submit" class="btn-box btn"><span>Рассчитать</span></button>
+            <div class="form-row">
+              <label for="grinding"></label>
+              <input class="input input-narrow"
+              placeholder="00"
+              type="text"
+              value="2"
+              id="grinding"
+              name="grinding"
+              pattern="[0-9]+"
+              title="Пожалуйста, введите только цифры"
+              required
+              >
+              <span class="input-info">Укажите запас на шлифовку очковой линзы в мм</span>
+            </div>
+            <div class="submit">
+              <input type="submit" value="Рассчитать" class="btn btn-submit"></input>
+            </div>
         </form>
-      </div>
-      
-        
-        <div class="dia-result area">
-          <p class="result-text">Необходимый диаметр: 
-            <span class="min-dia-ol">0</span> mm</p>
+    </div>
+        <div class="box-content">
+          <div class="box-result">
+          <p class="text-result">
+            <!-- <span class="info-result">Необходимый диаметр:</span> -->
+            <span class="info-result"> ⌀</span>
+            <span class="calc-result">0</span>
+            <span class="info-result">mm</span>
+          </p>
         </div>
-        
+      </div>
       </div>
     </div>
-    <button class="to-main btn btn-box"><span>TO MAIN PAGE</span></button>
     <script src="../scripts/redirectToHome.js"></script>
     <script src="../scripts/mindia.js"></script>
   </body>
