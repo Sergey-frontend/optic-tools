@@ -348,3 +348,33 @@ body {
 .floating-button:hover .btn-back-black {
   display: none;
 }
+
+.autocomplete-list {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 70px;
+  text-align: center;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+
+.autocomplete-item.active {
+  background-color: var(--text-light);
+}
+
+.suggestion {
+  font-weight: bold;
+  color: var(--content-color);
+  margin: 0;
+  padding: 5px 0;
+}
+
+.suggestion:hover {
+  color: white;
+  cursor: pointer;
+  background-color: var(--content-color);
+}
