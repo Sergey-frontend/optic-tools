@@ -7,7 +7,7 @@
     <title>Optic Tools</title>
   </head>
   <body>
-    <div class="floating-button">
+    <div class="btn-goback">
       <img class="btn-back-black" src="../images/back-black.svg" alt="go-back" />
       <img class="btn-back-light" src="../images/back-white.svg" alt="go-back">
     </div>
@@ -36,21 +36,21 @@
             <label>
               <span class="eye-name">OD</span>
             </label>
-            <input class="input input-wide  autocomplete" type="text" placeholder="Сфера"/>
+            <input class="input input-wide  autocomplete dptr" type="text" name="od-sph" placeholder="Сфера"/>
               <div class="autocomplete-list"></div>
-            <input class="input input-wide  autocomplete" type="text" placeholder="Циллиндр">
+            <input class="input input-wide  autocomplete dptr" type="text" name="od-cyl" placeholder="Циллиндр">
               <div class="autocomplete-list"></div>
-            <input class="input input-wide" type="text" placeholder="Ось">
+            <input class="input input-wide axis" type="text" name="od-axis" placeholder="Ось">
           </div>
           <div class="form-row">
             <label>
               <span class="eye-name">OS</span>
             </label>
-            <input class="input input-wide autocomplete" type="text" placeholder="Сфера">
+            <input class="input input-wide autocomplete dptr" type="text" name="os-sph" placeholder="Сфера">
               <div class="autocomplete-list"></div>
-            <input class="input input-wide autocomplete" type="text" placeholder="Циллиндр">
+            <input class="input input-wide autocomplete dptr" type="text" name="os-cyl" placeholder="Циллиндр">
               <div class="autocomplete-list"></div>
-            <input class="input input-wide" type="text" placeholder="Ось"> 
+            <input class="input input-wide axis" type="text" name="os-axis" placeholder="Ось"> 
           </div>
           <div class="submit">
             <input type="submit" value="Рассчитать" class="btn btn-submit"></input>
@@ -63,10 +63,10 @@
           <p class="group-description">result here</p>
           <p class="group-description">result here</p>
         </div>
+        <div class="errors hide"></div>
       </div>
     </div>
-    <script src="../scripts/redirectToHome.js"></script>
-    <script src="../scripts/transposition.js"></script>
     <script src="../scripts/autocomplete.js"></script>
+    <script src="../scripts/transposition.js "type="module"></script>
   </body>
 </html>

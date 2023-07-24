@@ -1,7 +1,8 @@
 :root {
   --text-normal: rgba(26, 26, 26, 1);
   --text-light: rgba(50, 50, 50, 1);
-  --text-danger: rgba(220, 53, 69, 1);
+  --text-warning: rgba(228, 161, 27, 1);
+  --text-danger: rgb(212, 32, 50);
   --content-color: rgba(0, 163, 42, 1);
   --bg-color: rgba(237, 250, 239, 1);
   --disabled-color: rgba(128, 128, 128, 1);
@@ -315,7 +316,7 @@ body {
   transform: scale(0.95);
 }
 
-.floating-button {
+.btn-goback {
   display: flex;
   position: fixed;
   width: 32px;
@@ -328,12 +329,12 @@ body {
   box-shadow: 3px 3px 5px 2px var(--shadow-color);
 }
 
-.floating-button:hover {
+.btn-goback:hover {
   cursor: pointer;
   background-color: var(--content-color);
 }
 
-.floating-button:active {
+.btn-goback:active {
   transform: scale(0.95);
 }
 
@@ -341,11 +342,11 @@ body {
   display: none;
 }
 
-.floating-button:hover .btn-back-light {
+.btn-goback:hover .btn-back-light {
   display: inline;
 }
 
-.floating-button:hover .btn-back-black {
+.btn-goback:hover .btn-back-black {
   display: none;
 }
 
@@ -377,4 +378,20 @@ body {
   color: white;
   cursor: pointer;
   background-color: var(--content-color);
+}
+
+.validate-danger {
+  border: 2px solid var(--text-danger) !important;
+}
+
+.hide {
+  display: none;
+}
+
+.text-danger {
+  color: var(--text-danger);
+}
+
+.text-warning {
+  color: var(--text-warning)
 }

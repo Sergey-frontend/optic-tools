@@ -5,8 +5,7 @@
   "description": "Tools for optometrists and ophthalmologists",
   "main": "src/index.js",
   "scripts": {
-    "build": "babel src/scripts --out-dir dist --presets=@babel/preset-env",
-    "start": "npm run build && electron-forge start",
+    "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -20,12 +19,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "on-change": "^4.0.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.22.6",
-    "@babel/core": "^7.22.8",
-    "@babel/preset-env": "^7.22.7",
     "@electron-forge/cli": "^6.2.1",
     "@electron-forge/maker-deb": "^6.2.1",
     "@electron-forge/maker-rpm": "^6.2.1",

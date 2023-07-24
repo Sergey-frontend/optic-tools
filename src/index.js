@@ -10,14 +10,10 @@ const createWindow = () => {
     width: 600,
     height: 400,
     resizable: true,
-    // webPreferences: {
-    //   preload: path.join(__dirname, 'preload.js'),
-    // },
   });
 
-  mainWindow.loadFile(path.join(__dirname, '/pages/app-main.html'));
+  mainWindow.loadFile(path.join(__dirname, '/pages/main.html'));
 
-  // Open the DevTools.
   mainWindow.webContents.openDevTools();
 };
 

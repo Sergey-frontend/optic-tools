@@ -1,24 +1,45 @@
-const form = document.querySelector('form');
-const minDiaResult = document.querySelector('.min-dia-ol');
-const ocularInput = document.getElementById('ocular');
+import watchedObject from './state.js';
+import { validateInput } from './view.js';
+import { getMinDia } from './calculations.js';
 
-const getMinDia = (ocular, bridge, pd) => {
-  const lensThicknessReserveInMm = 2;
-  return ((ocular + bridge) - pd) + (ocular + lensThicknessReserveInMm);
+const elements = {
+  form: document.querySelector('form'),
+  ocular: document.querySelector('#ocular'),
+  bridge: document.querySelector('#bridge'),
+  pd: document.querySelector('#pd'),
+  grinding: document.querySelector('#grinding'),
+  result: document.querySelector('.calc-result'),
+  btnBack: document.querySelector('.btn-goback'),
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  ocularInput.focus();
+  elements.ocular.focus();
 });
 
-form.addEventListener('submit', (e) => {
+elements.btnBack.addEventListener('click', (e) => {
   e.preventDefault();
-  const formData = new FormData(form);
+  watchedObject.currentPage = 'main';
+});
+
+Object.entries(elements).forEach(([key, value]) => {
+  if (key === 'form') return;
+  value.addEventListener('keyup', (e) => {
+    const currentValue = e.target.value;
+    watchedObject.minDiaForm[key] = currentValue;
+    validateInput(currentValue, elements[key]);
+  });
+});
+
+elements.form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(elements.form);
   const ocularValue = Number(formData.get('ocular'));
   const bridgeValue = Number(formData.get('bridge'));
   const pdValue = Number(formData.get('pd'));
-  const result = getMinDia(ocularValue, bridgeValue, pdValue);
-  minDiaResult.textContent = result;
-  form.reset();
-  ocularInput.focus();
+  const grindingValue = Number(formData.get('grinding'));
+
+  watchedObject.minDiaForm.calculationData = {
+    elements,
+    calculationResult: getMinDia(ocularValue, bridgeValue, pdValue, grindingValue),
+  };
 });
