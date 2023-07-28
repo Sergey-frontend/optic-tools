@@ -395,3 +395,7 @@ body {
 .text-warning {
   color: var(--text-warning)
 }
+
+.disabled {
+  border: 1px solid var(--disabled-color);  
+}

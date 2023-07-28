@@ -1,4 +1,4 @@
-import watchedObject from './state.js';
+import watchedObject from './app.js';
 
 const cardsContainer = document.querySelector('.cards');
 

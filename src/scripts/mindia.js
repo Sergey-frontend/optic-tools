@@ -1,19 +1,22 @@
-import watchedObject from './state.js';
-import { validateInput } from './view.js';
-import { getMinDia } from './calculations.js';
+import watchedObject from './app.js';
+import calculate from './calculations/calculate.js';
+import { validateInputMinDia } from './view.js';
 
 const elements = {
   form: document.querySelector('form'),
-  ocular: document.querySelector('#ocular'),
-  bridge: document.querySelector('#bridge'),
-  pd: document.querySelector('#pd'),
-  grinding: document.querySelector('#grinding'),
   result: document.querySelector('.calc-result'),
   btnBack: document.querySelector('.btn-goback'),
+  inputs: {
+    ocular: document.querySelector('#ocular'),
+    bridge: document.querySelector('#bridge'),
+    pd: document.querySelector('#pd'),
+    grinding: document.querySelector('#grinding'),
+  },
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  elements.ocular.focus();
+  watchedObject.canculationType = { typeName: 'mindia' };
+  elements.inputs.ocular.focus();
 });
 
 elements.btnBack.addEventListener('click', (e) => {
@@ -21,25 +24,24 @@ elements.btnBack.addEventListener('click', (e) => {
   watchedObject.currentPage = 'main';
 });
 
-Object.entries(elements).forEach(([key, value]) => {
-  if (key === 'form') return;
-  value.addEventListener('keyup', (e) => {
-    const currentValue = e.target.value;
-    watchedObject.minDiaForm[key] = currentValue;
-    validateInput(currentValue, elements[key]);
+Object.values(elements.inputs).forEach((el) => {
+  el.addEventListener('input', (e) => {
+    validateInputMinDia(e.target.value, el);
   });
 });
 
 elements.form.addEventListener('submit', (e) => {
   e.preventDefault();
   const formData = new FormData(elements.form);
-  const ocularValue = Number(formData.get('ocular'));
-  const bridgeValue = Number(formData.get('bridge'));
-  const pdValue = Number(formData.get('pd'));
-  const grindingValue = Number(formData.get('grinding'));
+  const data = {
+    ocular: Number(formData.get('ocular')),
+    bridge: Number(formData.get('bridge')),
+    pd: Number(formData.get('pd')),
+    grinding: Number(formData.get('grinding')),
+  };
 
-  watchedObject.minDiaForm.calculationData = {
+  watchedObject.canculationResult = {
+    resultValues: calculate('mindia', data),
     elements,
-    calculationResult: getMinDia(ocularValue, bridgeValue, pdValue, grindingValue),
   };
 });
