@@ -32,7 +32,7 @@ Object.values(elements.inputs).forEach((el) => {
 
 elements.form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const formData = new FormData(elements.form);
+  const formData = new FormData(e.target);
   const data = {
     ocular: Number(formData.get('ocular')),
     bridge: Number(formData.get('bridge')),
