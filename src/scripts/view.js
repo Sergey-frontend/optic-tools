@@ -51,6 +51,9 @@ const unblockInput = (input) => {
 const SetActiveCalcType = ({ typeName, elements }) => {
   if (typeName === 'mindia') return;
 
+  elements.btnSubmit.disabled = false;
+  elements.btnSubmit.classList.remove('disabled');
+
   Object.values(elements.calcType).forEach((type) => {
     if (!type) return;
     type.parentNode.classList.remove('active');
@@ -93,7 +96,7 @@ const SetActiveCalcType = ({ typeName, elements }) => {
 
 const axisValidate = (ax, element) => {
   const value = Number(ax);
-  if (Number.isNaN(value) || value > 180) {
+  if (Number.isNaN(value) || (value < 0 || value > 180)) {
     element.classList.add('validate-danger');
   } else {
     element.classList.remove('validate-danger');
@@ -151,7 +154,7 @@ const getSuggestion = (value) => {
 };
 
 const renderSuggestions = (suggestionsBox, suggestionsList) => {
-  suggestionsBox.textContent = '';
+  suggestionsBox.innerHTML = '';
   suggestionsList.forEach((suggestionValue) => {
     const suggestionItem = document.createElement('p');
     suggestionItem.textContent = suggestionValue;
