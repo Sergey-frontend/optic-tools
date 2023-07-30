@@ -1,4 +1,4 @@
-import onChange from 'on-change';
+import onChange from '../../node_modules/on-change/index.js';
 import { renderResult, setPage, SetActiveCalcType } from './view.js';
 
 const state = {
