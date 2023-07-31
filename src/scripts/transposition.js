@@ -191,7 +191,6 @@ elements.form.addEventListener('submit', (e) => {
   console.log('result',result)
   // watchedObject.canculationResult = { result, elements };
   } catch (err) {
-    console.error(err)
     watchedObject.error = {
       errValue: errorsList[err.message],
       errElements: elements.error,

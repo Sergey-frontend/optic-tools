@@ -14,11 +14,11 @@ const roundAxis = (num) => {
 };
 
 const getAdd = (num) => {
-  if (num > 0 && num < 1.5) {
+  if (num >= 0.75 && num <= 1.25) {
     return 'LO';
-  } if (num >= 1.5 && num < 2.5) {
+  } if (num >= 1.5 && num <= 1.75) {
     return 'MID';
-  } if (num >= 2.5 && num <= 4) {
+  } if (num >= 2 && num <= 2.5) {
     return 'HI';
   }
   return 'ADD вне диапазона';
