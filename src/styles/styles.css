@@ -285,7 +285,7 @@ body {
   user-select: none;
 }
 
-.group-description {
+.text-description {
   margin: 5px 0;
   font-size: 20px;
 }
@@ -398,4 +398,10 @@ body {
 
 .disabled {
   border: 1px solid var(--disabled-color);  
+}
+
+.result {
+  display: flex;
+  height: 100%;
+  justify-content: center;
 }
