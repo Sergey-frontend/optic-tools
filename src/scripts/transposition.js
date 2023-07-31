@@ -24,11 +24,19 @@ const elements = {
     'od-add': document.querySelector('#od-add'),
     'os-add': document.querySelector('#os-add'),
   },
-  errors: {
-    maxCylValue: 'Значение быть в диапазоне 0-180',
-    toBigValue: 'Значение превышает оптимальные значения',
-    noString: 'Значение должно иметь цифровой формат',
-  },
+  error: {
+    boxError: document.querySelector('.box-error'),
+    textError: document.querySelector('.text-error'),
+  }
+};
+
+const errorsList = {
+  isEmpty: 'Введите данные рецепта',
+  isNotANumber: 'Введите только числовые значения',
+  axisIsNotValid: 'Укажите значение оси цилиндра в диапазоне от 0 до 180',
+  cylHaventAxis: 'Укажите значение оси цилиндра',
+  isMultipleOfQuarter: 'Значения сферы или цилиндра должны быть кратны 0.25',
+  addRequared: 'Укажите ADD',
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -119,7 +127,7 @@ const isCylHaveAxis = (data) => {
     return axis !== '';
   });
   if (!isValid) {
-    throw new Error('cylHaven`tAxis');
+    throw new Error('cylHaventAxis');
   }
 };
 
@@ -159,6 +167,8 @@ const validateForm = (data) => {
 
 elements.form.addEventListener('submit', (e) => {
   e.preventDefault();
+  elements.error.boxError.classList.add('hide')
+
   const formData = new FormData(e.target);
   const data = {
     od: {
@@ -175,12 +185,14 @@ elements.form.addEventListener('submit', (e) => {
     },
   };
 
-  // try {
+  try {
   const validatedData = validateForm(data);
-  const result = calculate(watchedObject.canculationType.typeName, validatedData);
-  watchedObject.canculationResult = { result, elements };
-  // } catch (error) {
-  //   console.error(error.message);
-
-  // }
+  // const result = calculate(watchedObject.canculationType.typeName, validatedData);
+  // watchedObject.canculationResult = { result, elements };
+  } catch (err) {
+    watchedObject.error = {
+      errValue: errorsList[err.message],
+      errElements: elements.error,
+    }
+  }
 });
