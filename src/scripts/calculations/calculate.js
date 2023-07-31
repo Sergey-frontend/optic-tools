@@ -1,11 +1,12 @@
-import calcMinDia from './calcMinDia.js';
+import minDia from './minDia.js';
 import spheroequivalent from './spheroequivalent.js';
+import toric from './toric.js';
 import monofocal from './monofocal.js';
 
 const calculate = (type, data) => {
   switch (type) {
     case 'mindia': {
-      return calcMinDia(data);
+      return minDia(data);
     }
     case 'spheroequivalent': {
       return spheroequivalent(data);
@@ -13,8 +14,10 @@ const calculate = (type, data) => {
     case 'monofocal': {
       return monofocal(data);
     }
-    default: console.log('type calculate', type)
-    // throw new Error('calculate error');
+    case 'toric': {
+      return toric(data);
+    }
+    default: throw new Error('calculate error');
   }
 };
 

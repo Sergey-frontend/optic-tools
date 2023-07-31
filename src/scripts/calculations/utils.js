@@ -6,8 +6,11 @@ const checkEmptyOculusData = ({ od, os }) => {
   return { od: chekedOD, os: chekedOS };
 };
 
-const normalizedToOpticFormat = (num) => {
-  return num > 0 ? `+${num.toFixed(2)}` : num.toFixed(2)
-}
+const normalizedToOpticFormat = (num) => (num > 0 ? `+${num.toFixed(2)}` : num.toFixed(2));
 
-export { checkEmptyOculusData, normalizedToOpticFormat };
+const roundAxis = (num) => {
+  const rounded = Math.round(num / 10) * 10;
+  return rounded === 0 ? '180' : rounded.toString();
+};
+
+export { checkEmptyOculusData, normalizedToOpticFormat, roundAxis };

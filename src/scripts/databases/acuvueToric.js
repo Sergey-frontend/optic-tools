@@ -1,9 +1,9 @@
 // read only
 
 export default {
-  sphere: {
+  sph: {
     '+5.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+6.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+6.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+6.00', cyl: '-1.25' } },
@@ -19,7 +19,7 @@ export default {
       },
     },
     '+5.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+5.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+5.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+5.50', cyl: '-1.25' } },
@@ -35,7 +35,7 @@ export default {
       },
     },
     '+5.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+5.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+5.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+5.25', cyl: '-1.25' } },
@@ -51,7 +51,7 @@ export default {
       },
     },
     '+4.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+5.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+5.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+5.00', cyl: '-1.25' } },
@@ -67,7 +67,7 @@ export default {
       },
     },
     '+4.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+4.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+4.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+4.75', cyl: '-1.25' } },
@@ -83,7 +83,7 @@ export default {
       },
     },
     '+4.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+4.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+4.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+4.50', cyl: '-1.25' } },
@@ -99,7 +99,7 @@ export default {
       },
     },
     '+4.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+4.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+4.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+4.25', cyl: '-1.25' } },
@@ -115,7 +115,7 @@ export default {
       },
     },
     '+3.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+3.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+3.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+3.75', cyl: '-1.25' } },
@@ -131,7 +131,7 @@ export default {
       },
     },
     '+3.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+3.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+3.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+3.50', cyl: '-1.25' } },
@@ -147,7 +147,7 @@ export default {
       },
     },
     '+3.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+3.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+3.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+3.25', cyl: '-1.25' } },
@@ -163,7 +163,7 @@ export default {
       },
     },
     '+3.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+3.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+3.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+3.00', cyl: '-1.25' } },
@@ -179,7 +179,7 @@ export default {
       },
     },
     '+2.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+2.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+2.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+2.75', cyl: '-1.25' } },
@@ -195,7 +195,7 @@ export default {
       },
     },
     '+2.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+2.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+2.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+2.50', cyl: '-1.25' } },
@@ -211,7 +211,7 @@ export default {
       },
     },
     '+2.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+2.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+2.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+2.25', cyl: '-1.25' } },
@@ -227,7 +227,7 @@ export default {
       },
     },
     '+2.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+2.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+2.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+2.00', cyl: '-1.25' } },
@@ -243,7 +243,7 @@ export default {
       },
     },
     '+1.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+1.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+1.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+1.75', cyl: '-1.25' } },
@@ -259,7 +259,7 @@ export default {
       },
     },
     '+1.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+1.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+1.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+1.50', cyl: '-1.25' } },
@@ -275,7 +275,7 @@ export default {
       },
     },
     '+1.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+1.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+1.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+1.25', cyl: '-1.25' } },
@@ -291,7 +291,7 @@ export default {
       },
     },
     '+1.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+1.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+1.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+1.00', cyl: '-1.25' } },
@@ -307,7 +307,7 @@ export default {
       },
     },
     '+0.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+0.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+0.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+0.75', cyl: '-1.25' } },
@@ -323,7 +323,7 @@ export default {
       },
     },
     '+0.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+0.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+0.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+0.50', cyl: '-1.25' } },
@@ -339,7 +339,7 @@ export default {
       },
     },
     '+0.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+0.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+0.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+0.25', cyl: '-1.25' } },
@@ -355,7 +355,7 @@ export default {
       },
     },
     '+0.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '+0.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '+0.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '+0.00', cyl: '-1.25' } },
@@ -371,7 +371,7 @@ export default {
       },
     },
     '-0.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-0.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-0.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-0.25', cyl: '-1.25' } },
@@ -387,7 +387,7 @@ export default {
       },
     },
     '-0.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-0.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-0.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-0.50', cyl: '-1.25' } },
@@ -403,7 +403,7 @@ export default {
       },
     },
     '-0.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-0.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-0.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-0.75', cyl: '-1.25' } },
@@ -419,7 +419,7 @@ export default {
       },
     },
     '-1.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-1.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-1.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-1.00', cyl: '-1.25' } },
@@ -435,7 +435,7 @@ export default {
       },
     },
     '-1.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-1.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-1.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-1.25', cyl: '-1.25' } },
@@ -451,7 +451,7 @@ export default {
       },
     },
     '-1.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-1.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-1.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-1.50', cyl: '-1.25' } },
@@ -467,7 +467,7 @@ export default {
       },
     },
     '-1.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-1.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-1.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-1.75', cyl: '-1.25' } },
@@ -483,7 +483,7 @@ export default {
       },
     },
     '-2.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-2.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-2.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-2.00', cyl: '-1.25' } },
@@ -499,7 +499,7 @@ export default {
       },
     },
     '-2.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-2.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-2.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-2.25', cyl: '-1.25' } },
@@ -515,7 +515,7 @@ export default {
       },
     },
     '-2.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-2.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-2.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-2.50', cyl: '-1.25' } },
@@ -531,7 +531,7 @@ export default {
       },
     },
     '-2.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-2.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-2.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-2.75', cyl: '-0.75' } },
@@ -547,7 +547,7 @@ export default {
       },
     },
     '-3.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-3.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-3.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-3.00', cyl: '-0.75' } },
@@ -563,7 +563,7 @@ export default {
       },
     },
     '-3.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-3.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-3.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-3.25', cyl: '-0.75' } },
@@ -579,7 +579,7 @@ export default {
       },
     },
     '-3.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-3.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-3.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-3.50', cyl: '-0.75' } },
@@ -595,7 +595,7 @@ export default {
       },
     },
     '-3.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-3.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-3.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-3.75', cyl: '-0.75' } },
@@ -611,7 +611,7 @@ export default {
       },
     },
     '-4.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-3.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-3.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-3.75', cyl: '-0.75' } },
@@ -627,7 +627,7 @@ export default {
       },
     },
     '-4.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-4.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-4.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-4.00', cyl: '-0.75' } },
@@ -643,7 +643,7 @@ export default {
       },
     },
     '-4.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-4.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-4.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-4.25', cyl: '-0.75' } },
@@ -659,7 +659,7 @@ export default {
       },
     },
     '-4.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-4.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-4.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-4.50', cyl: '-0.75' } },
@@ -675,7 +675,7 @@ export default {
       },
     },
     '-5.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-4.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-4.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-4.75', cyl: '-0.75' } },
@@ -691,7 +691,7 @@ export default {
       },
     },
     '-5.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-5.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-5.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-5.00', cyl: '-0.75' } },
@@ -707,7 +707,7 @@ export default {
       },
     },
     '-5.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-5.25', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-5.25', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-5.25', cyl: '-0.75' } },
@@ -723,7 +723,7 @@ export default {
       },
     },
     '-5.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-5.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-5.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-5.50', cyl: '-0.75' } },
@@ -739,7 +739,7 @@ export default {
       },
     },
     '-6.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-5.50', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-5.50', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-5.50', cyl: '-0.75' } },
@@ -755,7 +755,7 @@ export default {
       },
     },
     '-6.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-5.75', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-5.75', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-5.75', cyl: '-0.75' } },
@@ -771,7 +771,7 @@ export default {
       },
     },
     '-6.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-6.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-6.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-6.00', cyl: '-0.75' } },
@@ -787,7 +787,7 @@ export default {
       },
     },
     '-6.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-6.00', cyl: '-0.75' } },
         '-1.00': { result: { sph: '-6.00', cyl: '-0.75' } },
         '-1.25': { result: { sph: '-6.00', cyl: '-0.75' } },
@@ -803,7 +803,7 @@ export default {
       },
     },
     '-7.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-6.50', cyl: '+0.00' } },
         '-1.00': { result: { sph: '-6.50', cyl: '+0.00' } },
         '-1.25': { result: { sph: '-6.50', cyl: '-0.75' } },
@@ -819,7 +819,7 @@ export default {
       },
     },
     '-7.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-6.50', cyl: '+0.00' } },
         '-1.00': { result: { sph: '-6.50', cyl: '+0.00' } },
         '-1.25': { result: { sph: '-6.50', cyl: '-0.75' } },
@@ -835,7 +835,7 @@ export default {
       },
     },
     '-7.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-6.50', cyl: '+0.00' } },
         '-1.00': { result: { sph: '-6.50', cyl: '+0.00' } },
         '-1.25': { result: { sph: '-6.50', cyl: '-0.75' } },
@@ -851,7 +851,7 @@ export default {
       },
     },
     '-7.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-7.00', cyl: '+0.00' } },
         '-1.00': { result: { sph: '-7.00', cyl: '+0.00' } },
         '-1.25': { result: { sph: '-7.00', cyl: '-0.75' } },
@@ -867,7 +867,7 @@ export default {
       },
     },
     '-8.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-7.00', cyl: '+0.00' } },
         '-1.00': { result: { sph: '-7.00', cyl: '+0.00' } },
         '-1.25': { result: { sph: '-7.00', cyl: '-0.75' } },
@@ -883,7 +883,7 @@ export default {
       },
     },
     '-8.25': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-7.50', cyl: '+0.00' } },
         '-1.00': { result: { sph: '-7.50', cyl: '+0.00' } },
         '-1.25': { result: { sph: '-7.50', cyl: '-0.75' } },
@@ -899,7 +899,7 @@ export default {
       },
     },
     '-8.50': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-7.50', cyl: '+0.00' } },
         '-1.00': { result: { sph: '-7.50', cyl: '+0.00' } },
         '-1.25': { result: { sph: '-7.50', cyl: '-0.75' } },
@@ -915,7 +915,7 @@ export default {
       },
     },
     '-8.75': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-8.00', cyl: '+0.00' } },
         '-1.00': { result: { sph: '-8.00', cyl: '+0.00' } },
         '-1.25': { result: { sph: '-8.00', cyl: '-0.75' } },
@@ -931,7 +931,7 @@ export default {
       },
     },
     '-9.00': {
-      cylinder: {
+      cyl: {
         '-0.75': { result: { sph: '-8.00', cyl: '+0.00' } },
         '-1.00': { result: { sph: '-8.00', cyl: '+0.00' } },
         '-1.25': { result: { sph: '-8.00', cyl: '-0.75' } },
@@ -948,7 +948,7 @@ export default {
     },
   },
   '-9.50': {
-    cylinder: {
+    cyl: {
       '-0.75': { result: { sph: '-8.50', cyl: '+0.00' } },
       '-1.00': { result: { sph: '-8.50', cyl: '+0.00' } },
       '-1.25': { result: { sph: '-8.50', cyl: '-0.75' } },
@@ -964,7 +964,7 @@ export default {
     },
   },
   '-10.00': {
-    cylinder: {
+    cyl: {
       '-0.75': { result: { sph: '-9.00', cyl: '+0.00' } },
       '-1.00': { result: { sph: '-9.00', cyl: '+0.00' } },
       '-1.25': { result: { sph: '-9.00', cyl: '-0.75' } },
