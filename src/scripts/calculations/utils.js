@@ -6,4 +6,8 @@ const checkEmptyOculusData = ({ od, os }) => {
   return { od: chekedOD, os: chekedOS };
 };
 
-export { checkEmptyOculusData };
+const normalizedToOpticFormat = (num) => {
+  return num > 0 ? `+${num.toFixed(2)}` : num.toFixed(2)
+}
+
+export { checkEmptyOculusData, normalizedToOpticFormat };

@@ -187,9 +187,11 @@ elements.form.addEventListener('submit', (e) => {
 
   try {
   const validatedData = validateForm(data);
-  // const result = calculate(watchedObject.canculationType.typeName, validatedData);
+  const result = calculate(watchedObject.canculationType.typeName, validatedData);
+  console.log('result',result)
   // watchedObject.canculationResult = { result, elements };
   } catch (err) {
+    console.error(err)
     watchedObject.error = {
       errValue: errorsList[err.message],
       errElements: elements.error,
