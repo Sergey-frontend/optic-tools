@@ -182,8 +182,8 @@ const renderAutocomplete = (value, inputEl) => {
   });
 };
 
-const renderError = ({errValue, errElements}) => {
-  const {boxError, textError} = errElements;
+const renderError = ({ errValue, errElements }) => {
+  const { boxError, textError } = errElements;
   boxError.classList.remove('hide');
   textError.textContent = errValue;
 };

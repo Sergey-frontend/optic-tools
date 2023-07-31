@@ -27,7 +27,7 @@ const elements = {
   error: {
     boxError: document.querySelector('.box-error'),
     textError: document.querySelector('.text-error'),
-  }
+  },
 };
 
 const errorsList = {
@@ -36,6 +36,7 @@ const errorsList = {
   axisIsNotValid: 'Укажите значение оси цилиндра в диапазоне от 0 до 180',
   cylHaventAxis: 'Укажите значение оси цилиндра',
   isMultipleOfQuarter: 'Значения сферы или цилиндра должны быть кратны 0.25',
+  sphHaventCyl: 'Укажите значение силы цилиндра',
   addRequared: 'Укажите ADD',
 };
 
@@ -154,6 +155,16 @@ const isMultifocalHaveAdd = (data) => {
   });
 };
 
+const isSpheroEqHaveCyl = (data) => {
+  if (watchedObject.canculationType.typeName !== 'spheroequivalent') return;
+  Object.keys(data).forEach((oculus) => {
+    const { sph, cyl } = data[oculus];
+    if (sph !== '' && cyl === '') {
+      throw new Error('sphHaventCyl');
+    }
+  });
+};
+
 const validateForm = (data) => {
   const valuesAll = [...Object.values(data.od), ...Object.values(data.os)];
   isNotEmpty(valuesAll);
@@ -162,12 +173,13 @@ const validateForm = (data) => {
   isCylHaveAxis(data);
   isMultipleOfQuarter(data);
   isMultifocalHaveAdd(data);
+  isSpheroEqHaveCyl(data);
   return convertDataToNumber(data);
 };
 
 elements.form.addEventListener('submit', (e) => {
   e.preventDefault();
-  elements.error.boxError.classList.add('hide')
+  elements.error.boxError.classList.add('hide');
 
   const formData = new FormData(e.target);
   const data = {
@@ -186,14 +198,13 @@ elements.form.addEventListener('submit', (e) => {
   };
 
   try {
-  const validatedData = validateForm(data);
-  const result = calculate(watchedObject.canculationType.typeName, validatedData);
-  console.log('result',result)
-  // watchedObject.canculationResult = { result, elements };
+    const validatedData = validateForm(data);
+    const result = calculate(watchedObject.canculationType.typeName, validatedData);
+    watchedObject.canculationResult = { result, elements };
   } catch (err) {
     watchedObject.error = {
       errValue: errorsList[err.message],
       errElements: elements.error,
-    }
+    };
   }
 });

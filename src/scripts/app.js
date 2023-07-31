@@ -1,5 +1,7 @@
 import onChange from '../../node_modules/on-change/index.js';
-import { renderResult, setPage, SetActiveCalcType, renderError } from './view.js';
+import {
+  renderResult, setPage, SetActiveCalcType, renderError,
+} from './view.js';
 
 const state = {
   currentPage: null,
