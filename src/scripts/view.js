@@ -182,6 +182,12 @@ const renderAutocomplete = (value, inputEl) => {
   });
 };
 
+const renderError = ({errValue, errElements}) => {
+  const {boxError, textError} = errElements;
+  boxError.classList.remove('hide');
+  textError.textContent = errValue;
+};
+
 export {
   setPage,
   validateInputMinDia,
@@ -191,4 +197,5 @@ export {
   axisValidate,
   dioptriesValidate,
   renderAutocomplete,
+  renderError,
 };
