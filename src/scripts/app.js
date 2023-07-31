@@ -1,5 +1,5 @@
 import onChange from '../../node_modules/on-change/index.js';
-import { renderResult, setPage, SetActiveCalcType } from './view.js';
+import { renderResult, setPage, SetActiveCalcType, renderError } from './view.js';
 
 const state = {
   currentPage: null,
@@ -10,6 +10,10 @@ const state = {
   canculationResult: {
     resultValues: null,
     elements: null,
+  },
+  error: {
+    errValue: null,
+    errElements: null,
   },
 };
 
@@ -25,6 +29,10 @@ const watchedObject = onChange(state, (path, value) => {
     }
     case 'canculationResult': {
       renderResult(state.canculationType, value);
+      break;
+    }
+    case 'error': {
+      renderError(value);
       break;
     }
     default: throw new Error('WatchedObject Error');
