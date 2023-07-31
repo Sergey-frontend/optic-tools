@@ -97,7 +97,7 @@ const isNotEmpty = (col) => {
   const isValid = col.every((value) => value === '' || value === null);
   if (isValid) {
     throw new Error('isEmpty');
-  };
+  }
 };
 
 const isANumbers = (col) => {
@@ -126,7 +126,7 @@ const isCylHaveAxis = (data) => {
   });
   if (!isValid) {
     throw new Error('cylHaventAxis');
-  };
+  }
 };
 
 const isMultipleOfQuarter = (data) => {
