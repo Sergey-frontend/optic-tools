@@ -2,7 +2,7 @@ import acuvueMonofocal from '../databases/acuvueMonofocal.js';
 import { checkEmptyOculusData, normalizedToOpticFormat } from './utils.js';
 
 const monofocalCalculate = (oculus) => {
-  if (oculus === null) return oculus;
+  if (!oculus) return null;
   const { sph } = oculus;
   if ((sph > -4 && sph < 4)) return normalizedToOpticFormat(sph);
   try {

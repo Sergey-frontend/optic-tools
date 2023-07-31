@@ -1,7 +1,7 @@
 import { checkEmptyOculusData } from './utils.js';
 
 const spheroeqCalculate = (oculus) => {
-  if (oculus === null) return oculus;
+  if (!oculus) return null;
   const { sph, cyl } = oculus;
   if (cyl === 0.25) return sph;
   const halfCyl = cyl / 2;
@@ -22,4 +22,5 @@ const spheroequivalent = (data) => {
   };
 };
 
+export { spheroeqCalculate };
 export default spheroequivalent;

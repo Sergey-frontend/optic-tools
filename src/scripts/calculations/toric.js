@@ -2,7 +2,7 @@ import { checkEmptyOculusData, normalizedToOpticFormat, roundAxis } from './util
 import acuvueToric from '../databases/acuvueToric.js';
 
 const toricCalculate = (oculus) => {
-  if (oculus === null) return oculus;
+  if (!oculus) return null;
   try {
     const { sph, cyl, axis } = oculus;
     const dataResult = acuvueToric

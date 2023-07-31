@@ -13,4 +13,17 @@ const roundAxis = (num) => {
   return rounded === 0 ? '180' : rounded.toString();
 };
 
-export { checkEmptyOculusData, normalizedToOpticFormat, roundAxis };
+const getAdd = (num) => {
+  if (num > 0 && num < 1.5) {
+    return 'LO';
+  } if (num >= 1.5 && num < 2.5) {
+    return 'MID';
+  } if (num >= 2.5 && num <= 4) {
+    return 'HI';
+  }
+  return 'ADD вне диапазона';
+};
+
+export {
+  checkEmptyOculusData, normalizedToOpticFormat, roundAxis, getAdd,
+};
