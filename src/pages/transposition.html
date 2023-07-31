@@ -17,7 +17,7 @@
       </div>
       <div class="box-content">
         <div class="radio-group lens-type">
-          <p class="group-description">Выберите тип расчета</p>
+          <p class="text-description">Выберите тип расчета</p>
           <label for="spheroequivalent" class="radio-button">
             <input type="radio" name="radio" id="spheroequivalent" />
             <span class="type-name">Сфероэквивалент</span>
@@ -29,7 +29,7 @@
         </div>
         <div class="form form-transposition">
           <div>
-            <p class="group-description">Внесите данные рецепта</p>
+            <p class="text-description">Внесите данные рецепта</p>
           </div>
         <form >
           <div class="form-row">
@@ -58,12 +58,11 @@
         </form>
       </div>
       </div>
-      <div class="box-content">
-        <div class="result">
-          <p class="group-description">result here</p>
-          <p class="group-description">result here</p>
+      <div class="box-content result">
+        <div class="box-error hide">
+          <p class="text-description text-danger">Проверьте введенные данные</p>
+          <p class="text-description text-danger text-error"></p>
         </div>
-        <div class="errors hide"></div>
       </div>
     </div>
     <script src="../scripts/transposition.js "type="module"></script>

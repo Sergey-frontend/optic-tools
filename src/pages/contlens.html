@@ -17,7 +17,7 @@
       </div>
       <div class="box-content">
         <div class="radio-group company">
-          <p class="group-description">Выберите производителя</p>
+          <p class="text-description">Выберите производителя</p>
           <label for="acuvue" class="radio-button">
             <input type="radio" name="radio1" id="acuvue" >
             <img class="btn-img" src="../images/acuvue-logo.png" alt="Acuvue" >
@@ -28,7 +28,7 @@
           </label>
         </div>
         <div class="radio-group lens-type">
-          <p class="group-description">Выберите тип расчета</p>
+          <p class="text-description">Выберите тип расчета</p>
           <label for="monofocal" class="radio-button">
             <input type="radio" name="radio2" id="monofocal" >
             <span class="type-name">Монофокальные</span>
@@ -43,7 +43,7 @@
           </label>
         </div>
         <div>
-          <p class="group-description">Внесите данные рецепта</p>
+          <p class="text-description">Внесите данные рецепта</p>
         </div>
         <form class="form form-transposition">
           <div class="form-row">
@@ -77,9 +77,11 @@
           </div>
         </form>
       </div>
-      <div class="box-content">
-        <p class="group-description">тут будет результат</p>
-        <p class="group-description">тут будет результат</p>
+      <div class="box-content result">
+        <div class="box-error hide">
+          <p class="text-description text-danger">Проверьте введенные данные</p>
+          <p class="text-description text-danger text-error"></p>
+        </div>
       </div>
     </div>
     <script src="../scripts/transposition.js" type="module"></script>
