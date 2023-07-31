@@ -5,7 +5,6 @@ const transpositionCalc = (oculus) => {
   const { sph, cyl, axis } = oculus;
   const computedAxis = axis <= 90 ? axis + 90 : axis - 90;
   const computedSph = sph + cyl;
-
   return {
     sph: normalizedToOpticFormat(computedSph),
     cyl: normalizedToOpticFormat(-cyl),

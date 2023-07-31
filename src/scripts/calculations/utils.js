@@ -21,7 +21,7 @@ const getAdd = (num) => {
   } if (num >= 2 && num <= 2.5) {
     return 'HI';
   }
-  return 'ADD вне диапазона';
+  return 'Значеник вне диапазона';
 };
 
 export {

@@ -39,7 +39,6 @@ elements.form.addEventListener('submit', (e) => {
     pd: Number(formData.get('pd')),
     grinding: Number(formData.get('grinding')),
   };
-
   watchedObject.canculationResult = {
     resultValues: calculate('mindia', data),
     elements,

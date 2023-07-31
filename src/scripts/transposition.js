@@ -82,17 +82,14 @@ const convertColToNumber = (col) => col.map((i) => Number(i));
 
 const convertDataToNumber = (data) => {
   const copyData = JSON.parse(JSON.stringify(data));
-
   Object.keys(copyData).forEach((key) => {
     const value = copyData[key];
-
     if (typeof value === 'object' && value !== null) {
       copyData[key] = convertDataToNumber(value);
     } else {
       copyData[key] = Number(value) || 0;
     }
   });
-
   return copyData;
 };
 
@@ -100,7 +97,7 @@ const isNotEmpty = (col) => {
   const isValid = col.every((value) => value === '' || value === null);
   if (isValid) {
     throw new Error('isEmpty');
-  }
+  };
 };
 
 const isANumbers = (col) => {
@@ -129,7 +126,7 @@ const isCylHaveAxis = (data) => {
   });
   if (!isValid) {
     throw new Error('cylHaventAxis');
-  }
+  };
 };
 
 const isMultipleOfQuarter = (data) => {
@@ -180,7 +177,6 @@ const validateForm = (data) => {
 elements.form.addEventListener('submit', (e) => {
   e.preventDefault();
   elements.error.boxError.classList.add('hide');
-
   const formData = new FormData(e.target);
   const data = {
     od: {
@@ -196,7 +192,6 @@ elements.form.addEventListener('submit', (e) => {
       add: formData.get('os-add'),
     },
   };
-
   try {
     const validatedData = validateForm(data);
     const result = calculate(watchedObject.canculationType.typeName, validatedData);
