@@ -263,7 +263,9 @@ body {
 }
 
 .box-result {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .text-result {
@@ -394,6 +396,10 @@ body {
 
 .text-warning {
   color: var(--text-warning)
+}
+
+.text-success {
+  color: var(--content-color)
 }
 
 .disabled {

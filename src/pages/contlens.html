@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" >
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" >
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
     <title>Contact Lens Transposition</title>
-    <link rel="stylesheet" href="../styles/styles.css" >
+    <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body>
     <div class="btn-goback">
-      <img class="btn-back-black" src="../images/back-black.svg" alt="go-back" >
-      <img class="btn-back-light" src="../images/back-white.svg" alt="go-back">
+      <img class="btn-back-black" src="../images/back-black.svg" alt="go-back" />
+      <img class="btn-back-light" src="../images/back-white.svg" alt="go-back" />
     </div>
     <div class="container">
       <div>
@@ -19,26 +19,26 @@
         <div class="radio-group company">
           <p class="text-description">Выберите производителя</p>
           <label for="acuvue" class="radio-button">
-            <input type="radio" name="radio1" id="acuvue" >
-            <img class="btn-img" src="../images/acuvue-logo.png" alt="Acuvue" >
+            <input type="radio" name="radio1" id="acuvue" />
+            <img class="btn-img" src="../images/acuvue-logo.png" alt="Acuvue" />
           </label>
           <label for="alcon" class="radio-button">
-            <input type="radio" name="radio1" id="alcon" title="Временно недоступно" >
-            <img class="btn-img" src="../images/alcon-logo.png" alt="Alcon" >
+            <input type="radio" name="radio1" id="alcon" title="Временно недоступно" />
+            <img class="btn-img" src="../images/alcon-logo.png" alt="Alcon" />
           </label>
         </div>
         <div class="radio-group lens-type">
           <p class="text-description">Выберите тип расчета</p>
           <label for="monofocal" class="radio-button">
-            <input type="radio" name="radio2" id="monofocal" >
+            <input type="radio" name="radio2" id="monofocal" />
             <span class="type-name">Монофокальные</span>
           </label>
           <label for="toric" class="radio-button">
-            <input type="radio" name="radio2" id="toric" >
+            <input type="radio" name="radio2" id="toric" />
             <span class="type-name">Торические</span>
           </label>
           <label for="multifocal" class="radio-button">
-            <input type="radio" name="radio2" id="multifocal" >
+            <input type="radio" name="radio2" id="multifocal" />
             <span class="type-name">Мультифокальные</span>
           </label>
         </div>
@@ -50,30 +50,68 @@
             <label>
               <span class="eye-name">OD</span>
             </label>
-            <input class="input input-wide autocomplete" type="text" id="od-sph" name="od-sph" placeholder="Сфера">
+            <input
+              class="input input-wide autocomplete"
+              type="text"
+              id="od-sph"
+              name="od-sph"
+              placeholder="Сфера" />
             <div class="autocomplete-list"></div>
-            <input class="input input-wide autocomplete" type="text" id="od-cyl" name="od-cyl" placeholder="Циллиндр">
+            <input
+              class="input input-wide autocomplete"
+              type="text"
+              id="od-cyl"
+              name="od-cyl"
+              placeholder="Циллиндр" />
             <div class="autocomplete-list"></div>
-            <input class="input input-wide" type="text" id="od-axis" name="od-axis" placeholder="Ось">
-            <input class="input input-wide" type="text" id="od-add" name="od-add" placeholder="Адд">
+            <input
+              class="input input-wide"
+              type="text"
+              id="od-axis"
+              name="od-axis"
+              placeholder="Ось" />
+            <input
+              class="input input-wide"
+              type="text"
+              id="od-add"
+              name="od-add"
+              placeholder="Адд" />
             <div class="autocomplete-list"></div>
-
           </div>
           <div class="form-row">
             <label>
               <span class="eye-name">OS</span>
             </label>
-            <input class="input input-wide autocomplete" type="text" id="os-sph" name="os-sph" placeholder="Сфера">
+            <input
+              class="input input-wide autocomplete"
+              type="text"
+              id="os-sph"
+              name="os-sph"
+              placeholder="Сфера" />
             <div class="autocomplete-list"></div>
-            <input class="input input-wide autocomplete" type="text" id="os-cyl" name="os-cyl" placeholder="Циллиндр">
+            <input
+              class="input input-wide autocomplete"
+              type="text"
+              id="os-cyl"
+              name="os-cyl"
+              placeholder="Циллиндр" />
             <div class="autocomplete-list"></div>
-            <input class="input input-wide" type="text" id="os-axis" name="os-axis" placeholder="Ось">
-            <input class="input input-wide" type="text" id="os-add" name="os-add" placeholder="Адд">
+            <input
+              class="input input-wide"
+              type="text"
+              id="os-axis"
+              name="os-axis"
+              placeholder="Ось" />
+            <input
+              class="input input-wide"
+              type="text"
+              id="os-add"
+              name="os-add"
+              placeholder="Адд" />
             <div class="autocomplete-list"></div>
-
           </div>
           <div class="submit">
-            <input type="submit" value="Рассчитать" class="btn btn-submit"></input>
+            <input type="submit" value="Рассчитать" class="btn btn-submit" />>
           </div>
         </form>
       </div>
@@ -81,6 +119,10 @@
         <div class="box-error hide">
           <p class="text-description text-danger">Проверьте введенные данные</p>
           <p class="text-description text-danger text-error"></p>
+        </div>
+        <div class="box-result">
+          <p class="text-description od-result hide"></p>
+          <p class="text-description os-result hide"></p>
         </div>
       </div>
     </div>
