@@ -395,15 +395,15 @@ body {
 }
 
 .text-warning {
-  color: var(--text-warning)
+  color: var(--text-warning);
 }
 
 .text-success {
-  color: var(--content-color)
+  color: var(--content-color);
 }
 
 .disabled {
-  border: 1px solid var(--disabled-color);  
+  border: 1px solid var(--disabled-color);
 }
 
 .result {
