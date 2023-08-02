@@ -94,20 +94,18 @@ const unblockInput = (input) => {
 
 const SetActiveCalcType = ({ typeName, elements }) => {
   if (typeName === 'mindia') return;
-
   elements.btnSubmit.disabled = false;
   elements.btnSubmit.classList.remove('disabled');
-
   Object.values(elements.calcType).forEach((type) => {
     if (!type) return;
     type.parentNode.classList.remove('active');
   });
   elements.calcType[typeName].parentNode.classList.add('active');
-
   Object.values(elements.inputs).forEach((el) => {
     if (!el) return;
     el.value = '';
     el.disabled = true;
+    el.classList.remove('validate-danger');
     el.classList.add('disabled');
   });
 
@@ -138,26 +136,6 @@ const SetActiveCalcType = ({ typeName, elements }) => {
   }
 };
 
-const axisValidate = (ax, element) => {
-  const value = Number(ax);
-  if (Number.isNaN(value) || value < 0 || value > 180) {
-    element.classList.add('validate-danger');
-  } else {
-    element.classList.remove('validate-danger');
-  }
-};
-
-const dioptriesValidate = (value, element) => {
-  if (value === '-' || value === '+') {
-    return;
-  }
-  if (Number.isNaN(Number(value))) {
-    element.classList.add('validate-danger');
-  } else {
-    element.classList.remove('validate-danger');
-  }
-};
-
 const cleanString = (string) => string.replace(',', '.').replace('/', '.');
 
 const getSuggestionsForInteger = (numValue) => {
@@ -166,7 +144,7 @@ const getSuggestionsForInteger = (numValue) => {
   return fractionalValues.map((item) => `${symbol}${numValue}${item}`);
 };
 
-const getSuggestion = (value) => {
+const getSuggestion = (value, min, max) => {
   const asNumberValue = Number(value);
   if (value === '') {
     return [];
@@ -182,7 +160,7 @@ const getSuggestion = (value) => {
   }
 
   if (Number.isInteger(asNumberValue)) {
-    if (asNumberValue > 20 || asNumberValue < -20) {
+    if (asNumberValue > max || asNumberValue < min) {
       return [];
     }
     return getSuggestionsForInteger(asNumberValue);
@@ -207,9 +185,9 @@ const renderSuggestions = (suggestionsBox, suggestionsList) => {
   });
 };
 
-const renderAutocomplete = (value, inputEl) => {
+const renderAutocomplete = (inputEl, value, min, max) => {
   const suggestionBox = inputEl.nextElementSibling;
-  const suggestion = getSuggestion(value.trim());
+  const suggestion = getSuggestion(value.trim(), min, max);
   renderSuggestions(suggestionBox, suggestion);
 
   if (suggestion.length !== 0) {
@@ -226,6 +204,14 @@ const renderAutocomplete = (value, inputEl) => {
   });
 };
 
+const validateInput = (inputEl, value, minValue, maxValue) => {
+  if (value < minValue || value > maxValue) {
+    inputEl.classList.add('validate-danger');
+  } else {
+    inputEl.classList.remove('validate-danger');
+  }
+};
+
 const renderError = ({ errValue, elements }) => {
   Object.keys(elements.result).forEach((key) => {
     elements.result[key].classList.add('hide');
@@ -237,12 +223,11 @@ const renderError = ({ errValue, elements }) => {
 
 export {
   setPage,
+  validateInput,
   validateInputMinDia,
   renderMinDiaResult,
   SetActiveCalcType,
   renderResult,
-  axisValidate,
-  dioptriesValidate,
   renderAutocomplete,
   renderError,
 };

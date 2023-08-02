@@ -1,5 +1,4 @@
 import watchedObject from './app.js';
-import { axisValidate, dioptriesValidate, renderAutocomplete } from './view.js';
 import calculate from './calculations/calculate.js';
 
 const elements = {
@@ -40,16 +39,22 @@ const errorsList = {
   cylHaventAxis: 'Укажите значение оси цилиндра',
   isMultipleOfQuarter: 'Значения сферы или цилиндра должны быть кратны 0.25',
   sphHaventCyl: 'Укажите значение силы цилиндра',
-  addRequared: 'Укажите ADD',
+  addRequared: 'Укажите значение аддидации',
 };
 
+// case 'transposition':
+// case 'spheroequivalent':
+// case 'monofocal':
+// case 'toric':
+// case 'multifocal':
+// default:
 document.addEventListener('DOMContentLoaded', () => {
+  elements.btnSubmit.disabled = true;
+  elements.btnSubmit.classList.add('disabled');
   Object.values(elements.inputs).forEach((el) => {
     if (!el) return;
     el.disabled = true;
-    elements.btnSubmit.disabled = true;
     el.classList.add('disabled');
-    elements.btnSubmit.classList.add('disabled');
   });
 });
 
@@ -62,22 +67,6 @@ Object.values(elements.calcType).forEach((el) => {
   if (!el) return;
   el.addEventListener('click', (e) => {
     watchedObject.canculationType = { typeName: e.target.id, elements };
-  });
-});
-
-const axisGroup = [elements.inputs['od-axis'], elements.inputs['os-axis']];
-const dioptriesGroup = Object.values(elements.inputs).filter((el) => el && !el.id.includes('axis'));
-
-axisGroup.forEach((el) => {
-  el.addEventListener('input', (e) => {
-    axisValidate(e.target.value, el);
-  });
-});
-
-dioptriesGroup.forEach((el) => {
-  el.addEventListener('input', (e) => {
-    dioptriesValidate(e.target.value, el);
-    renderAutocomplete(e.target.value, el);
   });
 });
 
