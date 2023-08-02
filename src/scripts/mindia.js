@@ -39,8 +39,10 @@ elements.form.addEventListener('submit', (e) => {
     pd: Number(formData.get('pd')),
     grinding: Number(formData.get('grinding')),
   };
+  const { typeName } = watchedObject.canculationType;
+  const result = calculate(typeName, data);
   watchedObject.canculationResult = {
-    resultValues: calculate('mindia', data),
+    resultData: result,
     elements,
   };
 });

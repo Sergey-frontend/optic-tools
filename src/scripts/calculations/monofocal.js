@@ -4,23 +4,23 @@ import { checkEmptyOculusData, normalizedToOpticFormat } from './utils.js';
 const monofocalCalculate = (oculus) => {
   if (!oculus) return null;
   const { sph } = oculus;
-  if ((sph > -4 && sph < 4)) return normalizedToOpticFormat(sph);
+  if (sph > -4 && sph < 4) return normalizedToOpticFormat(sph);
   try {
-    return acuvueMonofocal[normalizedToOpticFormat(sph)].result.sph;
+    return {
+      sph: acuvueMonofocal[normalizedToOpticFormat(sph)].result.sph,
+    };
   } catch (err) {
-    return 'Указанные диоптрии вне диапазона';
+    return {
+      errMessage: 'Расчет невозможен',
+    };
   }
 };
 
 const monofocal = (data) => {
   const { od, os } = checkEmptyOculusData(data);
   return {
-    od: {
-      sph: monofocalCalculate(od),
-    },
-    os: {
-      sph: monofocalCalculate(os),
-    },
+    od: monofocalCalculate(od),
+    os: monofocalCalculate(os),
   };
 };
 export default monofocal;

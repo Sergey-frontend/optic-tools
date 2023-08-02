@@ -37,8 +37,6 @@ body {
   width: 600px;
   height: 400px;
   margin: 0;
-  /* del */
-  border: 1px solid red;
 }
 
 .container {
@@ -265,11 +263,13 @@ body {
 .box-result {
   display: flex;
   flex-direction: column;
+  text-align: left;
   justify-content: center;
 }
 
 .text-result {
   margin: 0;
+  text-align: center !important;
 }
 
 .info-result {

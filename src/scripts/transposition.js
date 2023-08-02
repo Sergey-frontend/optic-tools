@@ -4,7 +4,6 @@ import calculate from './calculations/calculate.js';
 
 const elements = {
   form: document.querySelector('form'),
-  result: document.querySelector('.result'),
   btnBack: document.querySelector('.btn-goback'),
   btnSubmit: document.querySelector('.btn-submit'),
   calcType: {
@@ -23,6 +22,10 @@ const elements = {
     'os-axis': document.querySelector('#os-axis'),
     'od-add': document.querySelector('#od-add'),
     'os-add': document.querySelector('#os-add'),
+  },
+  result: {
+    od: document.querySelector('.od-result'),
+    os: document.querySelector('.os-result'),
   },
   error: {
     boxError: document.querySelector('.box-error'),
@@ -63,7 +66,7 @@ Object.values(elements.calcType).forEach((el) => {
 });
 
 const axisGroup = [elements.inputs['od-axis'], elements.inputs['os-axis']];
-const dioptriesGroup = Object.values(elements.inputs).filter((el) => el && !(el.id.includes('axis')));
+const dioptriesGroup = Object.values(elements.inputs).filter((el) => el && !el.id.includes('axis'));
 
 axisGroup.forEach((el) => {
   el.addEventListener('input', (e) => {
@@ -111,7 +114,7 @@ const isANumbers = (col) => {
 
 const axisIsValid = (data) => {
   const axises = convertColToNumber([data.od.axis, data.os.axis]);
-  const isValid = axises.every((value) => (value >= 0 && value < 181));
+  const isValid = axises.every((value) => value >= 0 && value < 181);
   if (!isValid) {
     throw new Error('axisIsNotValid');
   }
@@ -132,9 +135,7 @@ const isCylHaveAxis = (data) => {
 const isMultipleOfQuarter = (data) => {
   const { od, os } = data;
   const checkValues = convertColToNumber([od.sph, od.cyl, os.sph, os.cyl]);
-  const isValid = checkValues
-    .filter((v) => v !== 0)
-    .every((v) => v % 0.25 === 0);
+  const isValid = checkValues.filter((v) => v !== 0).every((v) => v % 0.25 === 0);
   if (!isValid) {
     throw new Error('isMultipleOfQuarter');
   }
@@ -194,12 +195,16 @@ elements.form.addEventListener('submit', (e) => {
   };
   try {
     const validatedData = validateForm(data);
-    const result = calculate(watchedObject.canculationType.typeName, validatedData);
-    watchedObject.canculationResult = { result, elements };
+    const { typeName } = watchedObject.canculationType;
+    const result = calculate(typeName, validatedData);
+    watchedObject.canculationResult = {
+      resultData: result,
+      elements,
+    };
   } catch (err) {
     watchedObject.error = {
       errValue: errorsList[err.message],
-      errElements: elements.error,
+      elements,
     };
   }
 });

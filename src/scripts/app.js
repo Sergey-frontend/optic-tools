@@ -10,12 +10,12 @@ const state = {
     elements: null,
   },
   canculationResult: {
-    resultValues: null,
+    resultData: null,
     elements: null,
   },
   error: {
     errValue: null,
-    errElements: null,
+    elements: null,
   },
 };
 
@@ -30,7 +30,7 @@ const watchedObject = onChange(state, (path, value) => {
       break;
     }
     case 'canculationResult': {
-      renderResult(state.canculationType, value);
+      renderResult(state.canculationType.typeName, value);
       break;
     }
     case 'error': {

@@ -7,18 +7,16 @@ const spheroeqCalculate = (oculus) => {
   const halfCyl = cyl / 2;
   const remainder = halfCyl % 0.25;
   const equaer = remainder === 0 ? halfCyl : halfCyl - remainder;
-  return sph + equaer;
+  return {
+    sph: sph + equaer,
+  };
 };
 
 const spheroequivalent = (data) => {
   const { od, os } = checkEmptyOculusData(data);
   return {
-    od: {
-      sph: spheroeqCalculate(od),
-    },
-    os: {
-      sph: spheroeqCalculate(os),
-    },
+    od: spheroeqCalculate(od),
+    os: spheroeqCalculate(os),
   };
 };
 

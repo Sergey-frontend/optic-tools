@@ -5,6 +5,8 @@ const toricCalculate = (oculus) => {
   if (!oculus) return null;
   try {
     const { sph, cyl, axis } = oculus;
+    if (sph > 6 || sph < -14) throw new Error('out of range');
+    if (cyl > 6 || sph < -6) throw new Error('out of range');
     const dataResult = acuvueToric
       .sph[normalizedToOpticFormat(sph)]
       .cyl[normalizedToOpticFormat(cyl)]
@@ -15,7 +17,9 @@ const toricCalculate = (oculus) => {
       axis: roundAxis(axis),
     };
   } catch (err) {
-    return 'Указанные диоптрии вне диапазона';
+    return {
+      errMessage: 'Расчет невозможен',
+    };
   }
 };
 

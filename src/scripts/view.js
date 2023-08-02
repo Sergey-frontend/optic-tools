@@ -16,7 +16,7 @@ const validateInputMinDia = (value, el) => {
 
 const renderMinDiaResult = (resultValues, elements) => {
   const chooseResultColor = (num) => {
-    if ((num >= 70 && num <= 75)) return 'text-warning';
+    if (num >= 70 && num <= 75) return 'text-warning';
     if (num > 75) return 'text-danger';
     return null;
   };
@@ -31,15 +31,59 @@ const renderMinDiaResult = (resultValues, elements) => {
   elements.inputs.ocular.focus();
 };
 
-const renderResult = (calcType, data) => {
-  const { typeName } = calcType;
-  const { resultValues, elements } = data;
+const renderResult = (typeName, result) => {
+  const { resultData, elements } = result;
+  Object.keys(resultData).forEach((key) => {
+    elements.result[key].classList.add('hide');
+  });
   switch (typeName) {
     case 'mindia': {
-      renderMinDiaResult(resultValues, elements);
+      renderMinDiaResult(resultData, elements);
       break;
     }
-    default: throw new Error('renderResult Error');
+    case 'monofocal':
+    case 'spheroequivalent': {
+      Object.entries(resultData).forEach(([key, value]) => {
+        if (!value) return;
+        const currentEl = elements.result[key];
+        currentEl.classList.remove('hide');
+        if (value.errMessage) {
+          currentEl.textContent = `${key.toUpperCase()}: ${value.errMessage}`;
+        } else {
+          currentEl.textContent = `${key.toUpperCase()}: sph ${value.sph}`;
+        }
+      });
+      break;
+    }
+    case 'multifocal': {
+      Object.entries(resultData).forEach(([key, value]) => {
+        if (!value) return;
+        const currentEl = elements.result[key];
+        currentEl.classList.remove('hide');
+        if (value.errMessage) {
+          currentEl.textContent = `${key.toUpperCase()}: ${value.errMessage}`;
+        } else {
+          currentEl.textContent = `${key.toUpperCase()}: sph ${value.sph} add ${value.add}`;
+        }
+      });
+      break;
+    }
+    case 'transposition':
+    case 'toric': {
+      Object.entries(resultData).forEach(([key, value]) => {
+        if (!value) return;
+        const currentEl = elements.result[key];
+        currentEl.classList.remove('hide');
+        if (value.errMessage) {
+          currentEl.textContent = `${key.toUpperCase()}: ${value.errMessage}`;
+        } else {
+          currentEl.textContent = `${key.toUpperCase()}: sph ${value.sph} cyl ${value.cyl} axis ${value.axis}`;
+        }
+      });
+      break;
+    }
+    default:
+      throw new Error('renderResult Error');
   }
 };
 
@@ -96,7 +140,7 @@ const SetActiveCalcType = ({ typeName, elements }) => {
 
 const axisValidate = (ax, element) => {
   const value = Number(ax);
-  if (Number.isNaN(value) || (value < 0 || value > 180)) {
+  if (Number.isNaN(value) || value < 0 || value > 180) {
     element.classList.add('validate-danger');
   } else {
     element.classList.remove('validate-danger');
@@ -182,8 +226,11 @@ const renderAutocomplete = (value, inputEl) => {
   });
 };
 
-const renderError = ({ errValue, errElements }) => {
-  const { boxError, textError } = errElements;
+const renderError = ({ errValue, elements }) => {
+  Object.keys(elements.result).forEach((key) => {
+    elements.result[key].classList.add('hide');
+  });
+  const { boxError, textError } = elements.error;
   boxError.classList.remove('hide');
   textError.textContent = errValue;
 };
