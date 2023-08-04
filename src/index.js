@@ -3,18 +3,21 @@ const path = require('path');
 
 if (require('electron-squirrel-startup')) {
   app.quit();
-}
+}ж
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 600,
     height: 400,
-    resizable: true,
+    useContentSize: true,
+    resizable: false,
+    center: true,
+    icon: path.join(__dirname, 'src/images/eye-icon.ico'),
   });
 
+  mainWindow.removeMenu();
   mainWindow.loadFile(path.join(__dirname, '/pages/main.html'));
-
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 };
 
 app.on('ready', createWindow);
@@ -22,12 +25,12 @@ app.on('ready', createWindow);
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
-  }
+  };
 });
 
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
-  }
+  };
 });
 
