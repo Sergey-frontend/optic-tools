@@ -1,13 +1,13 @@
 {
-  "name": "Optic Tools",
-  "productName": "optic-tools",
+  "name": "optic-tools",
+  "productName": "Optic Tools",
   "version": "1.0.0",
   "description": "Tools for optometrists and ophthalmologists",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make",
+    "make": "electron-forge make -- --platform=win32",
     "publish": "electron-forge publish",
     "lint": "npx eslint .",
     "fix": "npx eslint . --fix"
@@ -18,18 +18,23 @@
     "email": "tolstikovsn@gmail.com"
   },
   "license": "MIT",
+  "config": {
+    "forge": {
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel"
+        }
+      ]
+    }
+  },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "on-change": "^4.0.2"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",
-    "@electron-forge/maker-deb": "^6.2.1",
-    "@electron-forge/maker-rpm": "^6.2.1",
     "@electron-forge/maker-squirrel": "^6.2.1",
-    "@electron-forge/maker-zip": "^6.2.1",
-    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
-    "electron": "25.2.0",
+    "electron": "^25.2.0",
     "eslint": "^8.44.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5"

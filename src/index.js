@@ -3,7 +3,7 @@ const path = require('path');
 
 if (require('electron-squirrel-startup')) {
   app.quit();
-}ж
+};
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
