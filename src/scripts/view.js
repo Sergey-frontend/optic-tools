@@ -108,7 +108,6 @@ const SetActiveCalcType = ({ typeName, elements }) => {
     el.classList.remove('validate-danger');
     el.classList.add('disabled');
   });
-
   switch (typeName) {
     case 'spheroequivalent':
     case 'transposition':
@@ -145,24 +144,20 @@ const getSuggestionsForInteger = (numValue) => {
 };
 
 const getSuggestion = (value, min, max) => {
-  const asNumberValue = Number(value);
   if (value === '') {
     return [];
-  }
-  if (value === '-') {
+  } if (value === '-') {
     return ['-1.00', '-2.00', '-3.00', '-4.00'];
-  }
-  if (value === '+') {
+  } if (value === '+') {
     return ['+1.00', '+2.00', '+3.00', '+4.00'];
-  }
-  if (value === '-0') {
+  } if (value === '-0') {
     return ['-0.00', '-0.25', '-0.50', '-0.75'];
   }
-
+  const asNumberValue = Number(value);
+  if (asNumberValue > max || asNumberValue < min) {
+    return [];
+  }
   if (Number.isInteger(asNumberValue)) {
-    if (asNumberValue > max || asNumberValue < min) {
-      return [];
-    }
     return getSuggestionsForInteger(asNumberValue);
   }
   const [integer, fractional] = cleanString(value).split('.');
@@ -185,12 +180,23 @@ const renderSuggestions = (suggestionsBox, suggestionsList) => {
   });
 };
 
-const renderAutocomplete = (inputEl, value, min, max) => {
-  const suggestionBox = inputEl.nextElementSibling;
-  const suggestion = getSuggestion(value.trim(), min, max);
-  renderSuggestions(suggestionBox, suggestion);
+const suggestionValidate = (colSug, min, max) => {
+  const validated = [];
+  colSug.forEach((sug) => {
+    const toNumberSug = Number(sug);
+    if (toNumberSug >= min && toNumberSug <= max) {
+      validated.push(sug);
+    }
+  });
+  return validated;
+};
 
-  if (suggestion.length !== 0) {
+const autocomplete = (inputEl, value, min, max) => {
+  const suggestionBox = inputEl.nextElementSibling;
+  const suggestion = getSuggestion(value, min, max);
+  const validatedSuggestions = suggestionValidate(suggestion, min, max);
+  renderSuggestions(suggestionBox, validatedSuggestions);
+  if (suggestion.length !== 0 || value !== '') {
     suggestionBox.style.display = 'block';
     suggestionBox.style.top = `${inputEl.offsetTop + inputEl.offsetHeight}px`;
     suggestionBox.style.left = `${inputEl.offsetLeft}px`;
@@ -205,7 +211,15 @@ const renderAutocomplete = (inputEl, value, min, max) => {
 };
 
 const validateInput = (inputEl, value, minValue, maxValue) => {
-  if (value < minValue || value > maxValue) {
+  const allowedValues = ['-', '+', '+0', '-0'];
+  if (value === '' || allowedValues.includes(value)) {
+    inputEl.classList.remove('validate-danger');
+    return;
+  }
+  const toNumberValue = Number(value);
+  const isWithinRange = toNumberValue >= minValue && toNumberValue <= maxValue;
+  const isMultipleOfQuarter = toNumberValue % 0.25 === 0;
+  if (!toNumberValue || !isWithinRange || !isMultipleOfQuarter) {
     inputEl.classList.add('validate-danger');
   } else {
     inputEl.classList.remove('validate-danger');
@@ -228,6 +242,6 @@ export {
   renderMinDiaResult,
   SetActiveCalcType,
   renderResult,
-  renderAutocomplete,
+  autocomplete,
   renderError,
 };

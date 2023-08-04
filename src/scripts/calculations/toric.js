@@ -5,11 +5,11 @@ const toricCalculate = (oculus) => {
   if (!oculus) return null;
   try {
     const { sph, cyl, axis } = oculus;
-    if (sph > 6 || sph < -14) throw new Error('out of range');
-    if (cyl > 6 || sph < -6) throw new Error('out of range');
+    const normalizedSph = normalizedToOpticFormat(sph);
+    const normalizedCyl = normalizedToOpticFormat(cyl);
     const dataResult = acuvueToric
-      .sph[normalizedToOpticFormat(sph)]
-      .cyl[normalizedToOpticFormat(cyl)]
+      .sph[normalizedSph]
+      .cyl[normalizedCyl]
       .result;
     return {
       sph: dataResult.sph,

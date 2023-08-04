@@ -1,5 +1,6 @@
 import watchedObject from './app.js';
 import calculate from './calculations/calculate.js';
+import { validateInput, autocomplete } from './view.js';
 
 const elements = {
   form: document.querySelector('form'),
@@ -42,12 +43,75 @@ const errorsList = {
   addRequared: 'Укажите значение аддидации',
 };
 
-// case 'transposition':
-// case 'spheroequivalent':
-// case 'monofocal':
-// case 'toric':
-// case 'multifocal':
-// default:
+const valueRangeForCalcType = {
+  transposition: {
+    sph: {
+      min: -20,
+      max: 20,
+    },
+    cyl: {
+      min: -6,
+      max: 6,
+    },
+    axis: {
+      min: 0,
+      max: 180,
+    },
+  },
+  spheroequivalent: {
+    sph: {
+      min: -20,
+      max: 20,
+    },
+    cyl: {
+      min: -6,
+      max: 6,
+    },
+    axis: {
+      min: 0,
+      max: 180,
+    },
+  },
+  monofocal: {
+    sph: {
+      min: -14.25,
+      max: 5.75,
+    },
+  },
+  toric: {
+    sph: {
+      min: -10,
+      max: 5.5,
+    },
+    cyl: {
+      min: -3.5,
+      max: -0.75,
+    },
+    axis: {
+      min: 0,
+      max: 180,
+    },
+  },
+  multifocal: {
+    sph: {
+      min: -10,
+      max: 5.5,
+    },
+    cyl: {
+      min: -3.5,
+      max: -0.75,
+    },
+    axis: {
+      min: 0,
+      max: 180,
+    },
+    add: {
+      min: 0.75,
+      max: 2.5,
+    },
+  },
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   elements.btnSubmit.disabled = true;
   elements.btnSubmit.classList.add('disabled');
@@ -68,6 +132,19 @@ Object.values(elements.calcType).forEach((el) => {
   el.addEventListener('click', (e) => {
     watchedObject.canculationType = { typeName: e.target.id, elements };
   });
+});
+
+elements.form.addEventListener('input', (e) => {
+  e.preventDefault();
+  const currentEl = e.target;
+  const currentElName = e.target.id.replace(/^(od-|os-)/, '');
+  const currentValue = e.target.value; // string
+  const currentCalcType = watchedObject.canculationType.typeName;
+  const { min, max } = valueRangeForCalcType[currentCalcType][currentElName];
+  validateInput(currentEl, currentValue, min, max);
+  if (currentElName !== 'axis') {
+    autocomplete(currentEl, currentValue, min, max);
+  }
 });
 
 const convertColToNumber = (col) => col.map((i) => Number(i));
