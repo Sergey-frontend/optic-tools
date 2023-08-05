@@ -7,12 +7,12 @@ if (require('electron-squirrel-startup')) {
 
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
-    width: 600,
-    height: 400,
+    width: 601,
+    height: 420,
     useContentSize: true,
     resizable: false,
     center: true,
-    icon: path.join(__dirname, 'src/images/eye-icon.ico'),
+    icon: './icons/eye-100.ico',
   });
 
   mainWindow.removeMenu();

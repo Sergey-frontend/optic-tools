@@ -7,7 +7,7 @@
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make -- --platform=win32",
+    "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "npx eslint .",
     "fix": "npx eslint . --fix"
@@ -22,7 +22,11 @@
     "forge": {
       "makers": [
         {
-          "name": "@electron-forge/maker-squirrel"
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "iconUrl": "./icons/eye-100.ico",
+            "setupIcon": "./icons/eye-100.ico"
+          }
         }
       ]
     }
