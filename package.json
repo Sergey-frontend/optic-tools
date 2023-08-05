@@ -7,7 +7,7 @@
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make",
+    "make": "electron-forge make --platform=win32 --arch=x64",
     "publish": "electron-forge publish",
     "lint": "npx eslint .",
     "fix": "npx eslint . --fix"
@@ -18,19 +18,6 @@
     "email": "tolstikovsn@gmail.com"
   },
   "license": "MIT",
-  "config": {
-    "forge": {
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "iconUrl": "./icons/eye-100.ico",
-            "setupIcon": "./icons/eye-100.ico"
-          }
-        }
-      ]
-    }
-  },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "on-change": "^4.0.2"

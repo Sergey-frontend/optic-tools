@@ -10,14 +10,14 @@ const createWindow = () => {
     width: 601,
     height: 420,
     useContentSize: true,
-    resizable: false,
+    resizable: true,
     center: true,
-    icon: './icons/eye-100.ico',
+    icon: path.join(__dirname, 'icon/optic-tools.ico'),
   });
 
-  mainWindow.removeMenu();
+  // mainWindow.removeMenu();
   mainWindow.loadFile(path.join(__dirname, '/pages/main.html'));
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 };
 
 app.on('ready', createWindow);
