@@ -6,6 +6,7 @@ const elements = {
   form: document.querySelector('form'),
   btnBack: document.querySelector('.btn-goback'),
   btnSubmit: document.querySelector('.btn-submit'),
+  autocompleteBoxes: document.querySelectorAll('.autocomplete-list'),
   calcType: {
     spheroequivalent: document.querySelector('#spheroequivalent'),
     transposition: document.querySelector('#transposition'),
