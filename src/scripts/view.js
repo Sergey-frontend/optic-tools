@@ -96,7 +96,7 @@ const SetActiveCalcType = ({ typeName, elements }) => {
   if (typeName === 'mindia') return;
   elements.autocompleteBoxes.forEach((boxEl) => {
     boxEl.style.display = 'none';
-  })
+  });
   elements.btnSubmit.disabled = false;
   elements.btnSubmit.classList.remove('disabled');
   Object.values(elements.calcType).forEach((type) => {

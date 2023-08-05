@@ -137,14 +137,30 @@ Object.values(elements.calcType).forEach((el) => {
 
 elements.form.addEventListener('input', (e) => {
   e.preventDefault();
+  elements.autocompleteBoxes.forEach((el) => {
+    el.style.display = 'none';
+  });
   const currentEl = e.target;
   const currentElName = e.target.id.replace(/^(od-|os-)/, '');
-  const currentValue = e.target.value; // string
+  const currentValue = e.target.value;
   const currentCalcType = watchedObject.canculationType.typeName;
+
   const { min, max } = valueRangeForCalcType[currentCalcType][currentElName];
   validateInput(currentEl, currentValue, min, max);
   if (currentElName !== 'axis') {
     autocomplete(currentEl, currentValue, min, max);
+  }
+});
+
+Object.values(elements.inputs).forEach((input) => {
+  if (input) {
+    input.addEventListener('blur', (e) => {
+      const exception = 'axis';
+      if (!e.target.name.includes(exception)) {
+        const box = e.target.nextElementSibling;
+        box.style.display = 'none';
+      }
+    });
   }
 });
 
