@@ -34,13 +34,13 @@
 body {
   font-family: 'Gilroy', sans-serif;
   color: var(--text-normal);
+  background-color: var(--bg-color);
   width: 600px;
   height: 400px;
   margin: 0;
 }
 
 .container {
-  background-color: var(--bg-color);
   box-sizing: border-box;
   width: 100%;
   height: 100%;
