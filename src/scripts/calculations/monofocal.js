@@ -4,7 +4,7 @@ import { checkEmptyOculusData, normalizedToOpticFormat } from './utils.js';
 const monofocalCalculate = (oculus) => {
   if (!oculus) return null;
   const { sph } = oculus;
-  if (sph > -4 && sph < 4){
+  if (sph > -4 && sph < 4) {
     return {
       sph: normalizedToOpticFormat(sph),
     };

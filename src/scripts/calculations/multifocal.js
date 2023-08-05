@@ -14,7 +14,7 @@ const multifocalCalc = (oculus) => {
       };
     }
     return {
-      sph: normalizedToOpticFormat(spheroeqCalculate(oculus).sph),
+      sph: spheroeqCalculate(oculus).sph,
       add: textAdd,
     };
   } catch (error) {
