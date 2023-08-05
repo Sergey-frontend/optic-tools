@@ -1,4 +1,4 @@
-import { checkEmptyOculusData } from './utils.js';
+import { checkEmptyOculusData, normalizedToOpticFormat } from './utils.js';
 
 const spheroeqCalculate = (oculus) => {
   if (!oculus) return null;
@@ -7,8 +7,9 @@ const spheroeqCalculate = (oculus) => {
   const halfCyl = cyl / 2;
   const remainder = halfCyl % 0.25;
   const equaer = remainder === 0 ? halfCyl : halfCyl - remainder;
+  const result = sph + equaer;
   return {
-    sph: sph + equaer,
+    sph: normalizedToOpticFormat(result),
   };
 };
 
